@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Alpha Solutions/Build</title>
+    <link rel="icon" type="image/x-icon" href="imgsvg/as.png">
+    <link rel="stylesheet" href="allcss/style.css">
+    <link rel="stylesheet" href="allcss/quot.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="alljs/com.js"></script>
+     <script type="text/javascript">
+        var subcategory = {
+            MOTHERBOARD: ["ASUS-12000", "INTEL-12500"],
+            RAM: ["TRANSCEND 4G-8000", "ADATA 4G-7500",],
+            PROCESSOR: ["INTEL I3-45000", "AMD-60000", ],
+            GPU: ["ADM-100000", "MSI-125000"],
+            MONITOR: ["HP-10000", "LG-9000"]
+        }
+
+        function makeSubmenu(value) {
+            if (value.length == 0) document.getElementById("categorySelect").innerHTML = "<option></option>";
+            else {
+                var citiesOptions = "";
+                for (categoryId in subcategory[value]) {
+                    citiesOptions += "<option>" + subcategory[value][categoryId] + "</option>";
+                }
+                document.getElementById("categorySelect").innerHTML = citiesOptions;
+            }
+        }
+
+        function displaySelected() {
+            var city = document.getElementById("categorySelect").value;
+        }
+        
+    var asusm = 12000;                                                                              //prices for each
+    var intelm = 12500;
+    var tranram = 8000;
+    var adataram = 7500;
+    var intelpro = 45000;
+    var amdpro = 60000;
+    var amdgpu = 100000;
+    var msigpu = 125000;
+    var hpm = 10000;
+    var lgm = 9000;    
+    var total = 0;
+    var check = 1;
+    var gw;
+    var sfruit;
+    var perkg;
+    var by = document.querySelector("#out");
+    by.addEventListener("click", checkOut);
+    var cme = document.querySelector("#clr");
+    cme.addEventListener("click", clearMe);
+
+    function getMe() {
+      sfruit = document.getElementById("categorySelect").value;
+      perkg = parseFloat(document.querySelector("#entrybox").value);
+      gw = document.querySelector("#writeme");
+      if (Number.isNaN(perkg) === true) {
+        alert("Only Numbers !!! Or The Field is Empty");
+        check = 0;
+      }
+      else if (perkg<0) {
+        alert("Negative value!! @stupid");
+        check = 0;
+      }
+      else{
+        check = 1;
+      }
+      if (check == 1) {
+     
+        switch (sfruit) {
+          case "ASUS-12000":
+            var asu = asusm * perkg;
+            gw.value += "ASUS Motherboard " + perkg + " unit/s = " + asu + " rs\r";
+            total += asu;
+            perkg.value = "";
+            break;
+          case "INTEL-12500":
+            var inte = intelm * perkg;
+            gw.value += "INTEL Motherboard" + perkg + "unit/s = " + inte + " rs\r";
+            total += inte;
+            perkg.value = "";
+            break;
+          case "TRANSCEND 4G-8000":
+            var tran = tranram * perkg;
+            gw.value += "TRANSCEND RAM " + perkg + " unit/s = " + tran + " rs\r";
+            total += tran;
+            perkg.value = "";
+            break;
+          case "ADATA 4G-7500":
+            var ada = adataram * perkg;
+            gw.value += "ASUS RAM" + perkg + " unit/s = " + ada + " RS\r";
+            total += ada;
+            perkg.value = "";
+            break;
+          case "INTEL I3-45000":
+            var intelp = intelpro * perkg;
+            gw.value += "INTEl PROCESSSOR" + perkg + " unit/s = " + intelp + " rs\r";
+            total += intelp;
+            perkg.value = "";
+            break;
+         case "AMD-60000":
+            var amd = amdpro * perkg;
+            gw.value += "AMD Procesor" + perkg + " unit/s = " + amd + " rs\r";
+            total += amd;
+            perkg.value = "";
+            break;
+         case "ADM-100000":
+            var amdg = amdgpu * perkg;
+            gw.value += "AMD GPU " + perkg + " unit/s = " + amdg + " rs\r";
+            total += amdg;
+            perkg.value = "";
+            break;
+         case "MSI-125000":
+            var msi = msigpu * perkg;
+            gw.value += "MSI  GPU" + perkg + " unit/s = " + msi + " rs\r";
+            total += msi;
+            perkg.value = "";
+            break;
+         case "HP-10000":
+            var hp = hpm * perkg;
+            gw.value += "HP Monitor" + perkg + " unit/s = " + hp + " rs\r";
+            total += hp;
+            perkg.value = "";
+            break;
+         case "LG-9000":
+            var lgw = lgm * perkg;
+            gw.value += "LG Monitor" + perkg + " unit/s = " + lgw + " rs\r";
+            total += lgw;
+            perkg.value = "";
+            break;
+        }
+
+      }
+    }
+        
+    function checkOut() {
+      gw.value += "--------------------------------------------------------------\r";
+      gw.value += "Your Total Bill Is = " + total + " rs Thanks For using this function! :)\r";
+      gw.value += "--------------------------------------------------------------\r";
+      total = 0;
+        document.getElementById("make").disabled = true;
+         document.getElementById("adit").disabled = true;
+    }
+    function clearMe () {
+      gw.value = "";
+        document.getElementById("make").disabled = false;
+         document.getElementById("adit").disabled = false;
+    }
+
+        function resetSelection() {
+            document.getElementById("category").selectedIndex = 0;
+            document.getElementById("categorySelect").selectedIndex = 0;
+        }
+    </script>                                                                                            <!--js ends-->
+</head>
+<body onload="resetSelection()">                                                                <!--body starts-->
+    
+    <div id="Top-Header">
+         <img src="imgsvg/toplogo.png" alt="" class="lggo">
+        <div class="numbers">HOTLINE : *** *** **** | *** *** ****</div>
+                    <address class="pull-right">
+                        <span><b>αlpha Solutions (PVT) LTD</b></span><br>
+                            #101, LGF Unity Plaza, <br>
+                            Galle Road, Colombo 04, Sri Lanka.<br>
+                    </address>
+        </div>
+    
+    
+    
+    
+   
+     
+    
+    <div class="topnav" id="myTopnav">
+        <p class="logo"  onclick="window.location.href='index.html'">ALPHA<span>SOLUTIONS</span></p>
+        <span class="moveit"><a href="index.html" >HOME</a>
+        <div class="dropdown" id="dropit">
+            <a class="dropbtn"><span onclick="window.location.href='product.html'">PRODUCTS</span> 
+              <img src="imgsvg/down.svg" width="15px" height="15px" onclick="abc()" alt="down">      
+            </a>
+            <div class="dropdown-content" id="dropdown-content">
+                    <a href="product.html">DESKTOP COMPUTERS</a>
+                    <a href="product.html">LAPTOPS</a>
+                    <a href="product.html">GAMING PC</a>
+                    <a href="product.html">MONITORS</a>
+                    <a href="product.html">ACCESSORIES</a>
+            </div>
+        </div>  
+     <a href="about.html">ABOUT US</a>
+     <a href="quota.html" class="navactive">BUILD</a>
+     <a href="contact.html">CONTACT SALES</a>
+     <a href="cart.html" > <img src="imgsvg/cart.svg" width="17px" height="17px" alt="cart">CART</a>
+            <a href="account.html"> <img src="imgsvg/account.svg" width="17px" height="17px"  alt="account">ACCOUNTS</a></span>
+     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <img src="imgsvg/threeline.svg" width="15px" height="15px" alt="treeline">
+     </a>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+     <script src="com.js"></script>
+    <section id="bay">
+        <div class="banner-text1">
+            <h1>PC QUOTATION</h1>
+            <p>SIMPLY SELECT AND GET QUOTATION</p>
+        </div>
+    <div id="main" id="main">
+        <select id="category" size="1" onchange="makeSubmenu(this.value)" >                                <!--Selection 1-->
+        <option value="" disabled selected>Choose Item Category</option>
+        <option>MOTHERBOARD</option>
+        <option>RAM</option>
+        <option>PROCESSOR</option>
+        <option>GPU</option>
+        <option>MONITOR</option>
+        </select>
+        <br><br>
+    <select id="categorySelect" size="1">                                                                  <!--selection 2-->
+        <option value="" disabled selected>Choose Subcategory</option>
+        <option></option>
+        </select><br><br>
+    <form class="bill1">
+    <input type="text" id="entrybox" pattern="\d*" placeholder="Input Amount"><br><br>
+                                                                                                        <!--youtube link to show preloader-->
+        
+
+  </form>
+        <button onclick="getMe()" id="adit">ADD TO QUOTATION</button>                                            <!--button for addtocart-->
+       
+        <br><br>
+        <textarea class="bill" cols="100" rows="12" id="writeme" disabled></textarea>                            <!--text area-->
+        <br>
+        <button onclick="clearMe()" id="clearA">CLEARAREA</button>                                                <!--button for clearara-->
+        <button onclick="checkOut()"id="make">ADD TO CART</button>                                                   <!--button for make bill-->
+    </div>
+    </section> 
+    
+    
+    
+   <footer>
+      <div class="row primary">
+        <div class="column about">
+          <h3>Alpha Solutions</h3>
+          <p>
+           ENHANCE YOUR COMPUTING EXPERIENCE WITH US
+                WE CAN MAKE DREAMS COME TRUE 
+          </p>
+                    <div class="social">
+                      <i ><img src="footerimg/fb.png"> </i>
+                      <i ><img src="footerimg/tw.png"></i>
+                      <i ><img src="footerimg/yt.png"></i>
+                        <i><img src="footerimg/insta.png"></i>
+            
+                    </div>
+        </div>
+        <div class="column links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <a href="contact.html">Contact Us</a>
+            </li>
+            <li>
+              <a href="about.html">About Us</a>
+            </li>
+            <li>
+              <a href="quota.html">build</a>
+            </li>
+            <li>
+              <a href="account.html">Accounts</a>
+            </li>
+
+          </ul>
+        </div>
+          <div class="column links">
+            <h3>Brand Links</h3>
+            <ul>
+              <li>
+                <a href="https://www.nvidia.com">Nvidia</a>
+              </li>
+              <li>
+                <a href="https://www.dell.com/">Dell</a>
+              </li>
+              <li>
+                <a href="https://www.hp.com/">HP</a>
+              </li>
+              <li>
+                <a href="https://www.asus.com/">Asus</a>
+              </li>
+
+            </ul>
+          </div>
+        <div class="column subscribe">
+          <h3>GET IN TOUCH</h3>
+          <div>
+            <input class="fin" type="email" placeholder="Your email id here" />
+            <button class="fbtn">Subscribe</button>
+          </div>
+
+        </div>
+      </div>
+
+    </footer>
+
+    
+    
+</body>
+</html>

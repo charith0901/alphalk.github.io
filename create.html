@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>    
+<head>    
+    <title>Alpha Solutions/Login</title>
+    <link rel="icon" type="image/x-icon" href="imgsvg/as.png">   
+    <link rel="stylesheet" type="text/css" href="allcss/test2.css">    
+</head>    
+<body onload="fff()">    
+        <div class="bg2-image"></div>
+    <div class="login">    
+        <h2>Account Sign up</h2><br>   
+        <input type="text" name="Uname" id="fname" placeholder="fullname">    
+        <br><br>   
+        <input type="number" name="phonenumber" id="number" placeholder="phone number" pattern="[0-9]{10}" >    
+        <br><br>   
+        <input type="text" name="Uname" id="Uname" placeholder="Username" >    
+        <br><br>  
+        <input type="Password" name="Pass" id="Pass" placeholder="Password" >    
+        <br><br>    
+        <p id="msg"></p>   
+        <input type="Password" name="Pass" id="Pass2" placeholder="Password Again" >    
+        <br><br> 
+        <input type="checkbox" id="check">    
+        <span>I have read and understood the <a href="#">privacy policy</a></span>    
+        <br><br> 
+        <button onclick="window.location.href = 'account.html'" id="log">Cancel</button>
+        <button name="log" id="log" onclick="check()">Create Account</button>       
+        <br><br>  
+</div> 
+    <script>
+        
+        function fff(){
+            chae =document.querySelectorAll('input');
+            chae.value="";
+        }
+        
+        
+        
+        
+        
+                    var input1=document.getElementById("fname");
+                    var input2=document.getElementById("number");
+                    var input3=document.getElementById("Uname");
+                    var input4=document.getElementById("Pass");
+                    var input5=document.getElementById("Pass2");
+                    var input6=document.getElementById("check");
+        
+        
+function check(){
+                if (input1.value !== "" && input2.value !== "" && input3.value !== "" && input4.value !== "" && input5.value) {
+                        if(input4.value !== input5.value){
+                            document.getElementById("msg").innerHTML="unmatch password";
+                        }else if(input6.checked == false){
+                            alert("plz tick");
+                        }else{
+                            alert("Successfully created your account! click ok to continue.");
+                            window.location.href = "account.html";}
+                        }else{
+                            alert("plz enter all values");
+                        }
+            
+            } 
+    </script>
+</body>    
+</html>

@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#bay{
+    background: linear-gradient(rgba(0,0,0,0.5),#000), url(../imgsvg/pcbuild.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 120vh;
+}
+.banner-text1{
+    text-align: center;
+    color: #fff;
+    padding-top: 50px;
+}
+.banner-text1 h1{
+    font-size: 60px;
+    
+}
+.banner-text1 p{
+    font-size: 20px;
+}
+#main{
+    height: 40vh;
+    justify-content: center;
+    text-align: center;
+}
+#category,#categorySelect,#make{
+    background-color:darkgrey ;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 30px;
+}
+#adit{
+    background-color:aqua;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 30px;
+}
+#clearA{
+    background-color: crimson;
+    font-weight:bold;
+    padding: 5px;
+    border-radius: 30px;
+}
+#writeme{
+    font-family: Lucida Sans;
+    height: 35vh;
+    width: 120vh;
+    font-size: 20px;
+    color: #000;
+    background-color: #80ab68;
+   
+}

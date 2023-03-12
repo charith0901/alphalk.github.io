@@ -1,0 +1,57 @@
+body{
+    overflow-x: hidden;
+    overflow-y:auto;}
+
+.tbl{
+            height: 50px;
+            width:100%;
+            position: relative;
+       
+           
+        }
+table{
+    width: 100%;
+}
+        .tbl  td{
+            padding-left: 100px;
+            padding-top: 20px;
+            background-color: aquamarine;
+        }
+        
+        .cart{
+            
+            height: 250px;
+            width:750px;
+            position: relative;
+           margin-left: auto;
+          
+        }
+        .cart img{
+            position: relative;
+            width:150px;
+            height: 150px;
+            opacity: .5;
+            margin-top: 50px;
+           
+        }
+        #getbk{
+            background-color: coral;
+            color:aliceblue;
+            font-size: 25px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+    
+@media screen and (max-width: 600px) {
+    .tbl{
+        position: relative;
+        left:0;
+        width:100%;
+    }
+    .tbl td{
+        padding-left: 50px;
+    }
+    .cart{
+        margin-left: 150px;
+    }
+    

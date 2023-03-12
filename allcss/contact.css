@@ -1,0 +1,64 @@
+body{
+    overflow-x: hidden;
+}
+.contimg{
+    height: 60vh;
+}
+.leftside{
+    height: 60%;
+    width: 49%;
+    float: left;
+   
+}
+.info ,.rightside form{
+    padding:60px;
+}
+.info h3{
+    padding:40px 0 0px 0 ;
+    color:#555555
+}
+.rightside{
+    height:60%;
+    width: 49%;
+    float: right;
+  
+}
+.lbl{
+   margin-top: 15px; 
+}
+.rightside textarea{
+    height: 100px;
+    width: 400px;
+}
+.speak input{
+    width: 60%;
+}
+#holder{
+    height: 600px;
+    width: 1230px;
+    margin: 40px 80px  0 80px;
+}
+@media only screen and (max-width:600px) {
+  /* For tablets: */
+  .leftside {
+    width: 80%;
+    padding: 0;
+      height: 40%;
+  }
+  .rightside {
+    width: 80%;
+      height: 40%;
+      float: left;
+  }
+    #holder{
+        width:80%;
+        height: 1500px;
+    }
+    .contimg{
+        height: 30%;
+    }
+    .rightside textarea{
+    width: 300px;
+}
+}
+
