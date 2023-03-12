@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+h2{
+  text-align:center;
+  padding: 20px;
+}
+/* Slider */
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+    }.customer-logos{
+        pointer-events: none;
+    }
+</style>
+</head>
+<body style="background-color:#abdbe3;">
+
+<script src="jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="slick.js"></script>
+<script src="bootstrap.min.js"></script>
+<link href="bootstrap.min.css" rel="stylesheet">
+    <script>$(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow:5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});</script>
+<section >
+<div class="container">
+  <h2>Our Brands</h2>
+   <section class="customer-logos slider">
+        <div class="slide"><img src="imgsvg/acer.png" title="acer"></div>
+        <div class="slide"><img src="imgsvg/asus.png" title="asus"></div>
+        <div class="slide"><img src="imgsvg/aurus-.png" title="aurus"></div>
+        <div class="slide"><img src="imgsvg/cooler.png" title="cooler Master"></div>
+        <div class="slide"><img src="imgsvg/crucial.png" title="crucial"></div>
+        <div class="slide"><img src="imgsvg/giga.png" title="gigabye"></div>
+        <div class="slide"><img src="imgsvg/kingston.png" title="kingston"></div>
+        <div class="slide"><img src="imgsvg/msi.png" title="msi"></div>
+        <div class="slide"><img src="imgsvg/nvidia.png" title="nvidia"></div>
+        <div class="slide"><img src="imgsvg/Rog.png" title="ROG"></div>
+        <div class="slide"><img src="imgsvg/ryzen.png" title="ryzen"></div>
+        <div class="slide"><img src="imgsvg/samsung.png" title="samsung"></div>
+     
+   </section>
+</div>
+    </section>
+</body>
+</html> 
